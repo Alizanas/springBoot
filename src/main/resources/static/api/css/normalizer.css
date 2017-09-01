@@ -46,3 +46,161 @@ body.appLoading::before
   background-repeat: no-repeat;
   background-size: auto 80px;
 }
+
+/******************************************************************************
+ *
+ * STRUCTURE
+ *
+ ******************************************************************************/
+
+#menu
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: auto;
+  padding-right: 20px;
+  transition: all 250ms ease-in-out;
+  transform: translateX(-250px);
+  box-shadow: 0 0 5px rgba(20, 20, 20, 1);
+  background-color: rgba(255, 255, 255, 1);
+  border-right: 1px solid rgba(255, 255, 255, 1);
+}
+
+#menu_check:checked ~ #menu
+{
+  padding-right: 0;
+  transform: translateX(0);
+}
+
+#boton {
+    background-color: white;
+    border: 2px solid rgba(75,75,75,0.4);
+    border-left: none;
+    border-radius: 0px 4px 4px 0px;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    position: absolute;
+    left: 248px;
+}
+
+#menu_check:checked ~ #menu #boton {
+    /*background-color: #555555;*/
+    color: black;
+}
+
+#menu_check
+{
+    display: none;
+}
+
+#menu ul
+{
+  float: left;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  
+}
+
+#menu ul li
+{
+  float: left;
+  width: 100%;
+  height: auto;
+  padding: 15px 35px 15px 35px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(50, 50, 50, 0.15);
+  text-align: center;
+  text-decoration: none;
+}
+
+#menu ul li a
+{
+    text-decoration: none;
+}
+
+#menu ul li:last-child
+{
+  border-bottom: 1px solid rgba(50, 50, 50, 0);
+}
+
+#wrapper, #wrapper > div
+{
+  float: left;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+
+
+#footer
+{
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 1);
+  border-radius: 100%;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+#footer *
+{
+  color: rgba(255, 255, 255, 1);
+}
+
+#footer > a
+{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#footer > a::before
+{
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  margin-left: -2px;
+  width: 4px;
+  height: 4px;
+  background-color: rgba(50, 50, 50, 0.75);
+  border-radius: 100%;
+}
+
+#footer > a::after
+{
+  content: '';
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  margin-left: -2px;
+  width: 4px;
+  height: 40%;
+  background-color: rgba(50, 50, 50, 0.75);
+  border-radius: 1px;
+}

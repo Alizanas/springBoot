@@ -1,29 +1,55 @@
 <!DOCTYPE html>
+<!--El nombre de mi app es app. Mi funcion encapsulada será app-->
 <html lang="es" ng-app="app">
-  <head>
-    <meta charset="utf-8" />
-    <title>Titulo</title>
-    <link type="text/css" rel="stylesheet"  href="/api/css/normalizer.min.css"/>
-    <script type="text/javascript" src="/api/js/lib/ng-angular.min.js"></script>
-    <script type="text/javascript" src='/api/js/lib/ng-angular-route.min.js'></script>
+    <head>
+        <meta charset="utf-8" />
+        <title>Titulo</title>
+        <link type="text/css" rel="stylesheet"  href="/api/css/normalizer.css"/>
+        <link type="text/css" rel="stylesheet"  href="/ng-css/ini.css"/>
+        <link type="text/css" rel="stylesheet"  href="/ng-css/about.css"/>
+        <link type="text/css" rel="stylesheet"  href="/ng-css/testBbdd.css"/>
+        <link type="text/css" rel="stylesheet"  href="/ng-css/kirby.css"/>
+        <link type="text/css" rel="stylesheet"  href="/ng-css/search.css"/>
 
-    <script type="text/javascript" src='/api/js/ng-const/ng-const.min.js'></script>
+        <script type="text/javascript" src="/api/js/lib/ngAngular.min.js"></script>
+        <script type="text/javascript" src='/api/js/lib/ngAngularRoute.min.js'></script>
+        <script type="text/javascript" src='/api/js/ng-const/ng-const.js'></script>
+        <script type="text/javascript" src="/api/js/ng-module/ng-module-app.js"></script>
 
-    <script type="text/javascript" src="/api/js/ng-module/ng-module-app.min.js"></script>
-
-  </head>
-  <body apploading> 
-     
-    <ul>
-      <li><a href="#!/pagina1">Ir a la pagina 1</a>
-      </li>
-      <li><a href="#!/pagina2">Ir a la pagina 2</a>
-      </li>
-    </ul>
-
-    <div ng-view></div>
-
-    <script type="text/javascript" src="/ng-controller/ng-app-controller-template1.js"></script>
-    <script type="text/javascript" src="/ng-controller/ng-app-controller-template2.js"></script>
-  </body>
+    </head>
+    <!--Con apploading-->
+    <body apploading ng-controller="ngAppControllerIndex">
+        <input type="checkbox" name="checkbox" id="menu_check" />
+        <header id="menu">
+            <label id="boton" for="menu_check">Menú</label>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#!/">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="#!/search">buscar</a>
+                    </li>
+                    <li>
+                        <a href="#!/test-bbdd">Test BBDD</a>
+                    </li>
+                    <li>
+                        <a href="#!/kirby">kirby</a>
+                    </li>
+                    <li>Vacío 2</li>
+                    <li>Vacío 3</li>
+                </ul>
+            </nav>
+        </header>
+        <div id="wrapper"> 
+            <div ng-view></div>
+        </div>
+        <footer id="footer">
+            <a href="#!/about"></a>
+        </footer>
+        <script type="text/javascript" src="/ng-controller/ngAppControllerIndex.js"></script>
+        <script type="text/javascript" src="/ng-controller/ngAppControllerTestBbdd.js"></script>
+        <script type="text/javascript" src="/ng-controller/ngAppControllerSearch.js"></script>
+        
+    </body>
 </html>

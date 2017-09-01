@@ -1,0 +1,20 @@
+#ini
+{
+  float: left;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background-image: url('../ng-img/spring.png'), url('../ng-img/logo.png'), url('http://www.lacasadelastelas.es/images/stories/virtuemart/product/p-mar-045.jpg');
+  background-position: right top, center center, left top;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-size: auto 200px, 400px auto, cover;
+}
+
+
+@media all and (max-width: 768px)
+{
+  #ini
+  {
+    background-size: auto 200px, 400px auto, cover;
+  }
+}

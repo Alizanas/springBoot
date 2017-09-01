@@ -25,6 +25,8 @@ public class TestMapperImpl implements TestMapper
   @Override
   public List<TestModel> testMapper(TestModel obj) throws Exception
   {
+      
+    //System.out.println("\n\rPARAMETRO RECIBIDO: " + obj.getTable());
 
     List<TestModel> x = new ArrayList<>();
 

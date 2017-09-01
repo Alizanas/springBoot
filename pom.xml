@@ -9,7 +9,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>springBoot</name>
+  <name>springBootAlizanas</name>
   <description>Spring DAM</description>
 
   <parent>

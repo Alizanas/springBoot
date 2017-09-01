@@ -25,10 +25,20 @@ public class Item
   @RequestMapping(value = "/item",
                   method = RequestMethod.POST,
                   produces = MediaType.APPLICATION_JSON_VALUE)
-  public List<ItemModel> test(@RequestBody ItemModel obj) throws Exception
+  public List<ItemModel> item(@RequestBody ItemModel obj) throws Exception
   {
       System.out.println("llega");
       List<ItemModel> x = iService.ItemService(obj);
+    return x;
+  }
+  
+  @RequestMapping(value = "/allItem",
+                  method = RequestMethod.POST,
+                  produces = MediaType.APPLICATION_JSON_VALUE)
+  public List<ItemModel> allItem(@RequestBody ItemModel obj) throws Exception
+  {
+      System.out.println("llega");
+      List<ItemModel> x = iService.allItemService(obj);
     return x;
   }
 

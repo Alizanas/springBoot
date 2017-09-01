@@ -9,7 +9,8 @@
   flex-wrap: nowrap;
   justify-content: center;
   align-content: center;
-  align-items: center; 
+  align-items: center;
+  padding-top: 50px; 
 }
 /*Input buscador*/
 #buscador{
@@ -42,6 +43,38 @@
     width: 25%;
     height: 42px;
 }
+
+#search .lupa > div
+{
+  position: absolute;
+  z-index: 10;
+  top: 7px;
+  right: 15px;
+  width: 17px;
+  height: 17px;
+  text-align: center;
+  border-radius: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+
+#search .lupa > div span
+{
+  font-size: 0.8rem;
+  color: rgba(50, 50, 50, 0.7);
+  font-weight: bold;
+}
+
+#search .lupa > div span.notFound
+{
+  color: red;
+}
+
 /*Circulo de la lupa*/
 .lupa::before {
     position: absolute;
@@ -53,7 +86,7 @@
     top:7px;
     border-radius:100%;
     box-shadow: 0px -0px 0px 3px white;
-    z-index: 1000;
+    z-index: 4;
 }
 /*Palo de la lupa*/
 .lupa:after{
@@ -74,6 +107,12 @@
   clear: both;
   width: 100%;
   padding: 20px;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: stretch;
 }
 
 #search #items article
@@ -81,6 +120,7 @@
   width: 25%;
   float: left;
   padding: 20px;
+  
 }
 
 @media all and (max-width: 1279px)
@@ -88,6 +128,22 @@
   #search #items article
   {
     width: 33.33%;
+  }
+}
+
+@media all and (max-width: 979px)
+{
+  #search #items article
+  {
+    width: 50%;
+  }
+}
+
+@media all and (max-width: 767px)
+{
+  #search #items article
+  {
+    width: 100%;
   }
 }
 
@@ -115,6 +171,29 @@
   background-size: cover;
 }
 
+@media all and (max-width: 1279px)
+{
+  #search #items article > * > figure
+  {
+     min-height: 20vw;  
+  }
+}
+
+@media all and (max-width: 979px)
+{
+  #search #items article > * > figure
+  {
+     min-height: 40vw;  
+  }
+}
+
+@media all and (max-width: 767px)
+{
+  #search #items article > * > figure
+  {
+     min-height: 70vw;  
+  }
+}
 
 #search #items article > * > div
 {
@@ -145,7 +224,7 @@
   text-align: justify;
   line-height: 1.4rem;
   overflow: hidden;
-  max-height: 50px;
+  max-height: 70px;
   overflow: auto;
 }
 

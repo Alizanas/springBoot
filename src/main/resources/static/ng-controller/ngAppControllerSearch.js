@@ -1,6 +1,10 @@
 app.controller('ngAppControllerSearch',
-['$scope', '$http', '$timeout', function ($scope, $http, $timeout)
+['$scope', '$http', '$timeout', 'utilFactory',
+  function ($scope, $http, $timeout, utilFactory)
   {
+    /********************************************************************
+     * CONFIG
+     *******************************************************************/
     var timer =
     {
       search:
@@ -21,6 +25,8 @@ app.controller('ngAppControllerSearch',
     
     /**************************************************************************
     * 
+    * INI
+    * 
     * FUNCION AUTOLLAMADA QUE LLAMARÁ A UN CONTROLADOR PARA MOSTRAR TODOS LOS
     * ARTICULOS DEL MENU ANTES DE BUSCARLOS
     * 
@@ -39,10 +45,10 @@ app.controller('ngAppControllerSearch',
 
     /**************************************************************************
     * 
+    * FUNCION MODELO
+    * 
     * FUNCION QUE ES LLAMADA DESDE EL HTML Y RECIBE UNA CADENA QUE SE BUSCARÁ
     * EN LA BASE DE DATOS
-    * 
-    * FUNCION MODELO
     **************************************************************************/
 
     
@@ -53,6 +59,7 @@ app.controller('ngAppControllerSearch',
       $timeout.cancel(timer.search.id);
       timer.search.id = $timeout(function ()
       {
+        utilFactory.setContSearchItems(utilFactory.getContSearchItems() + 1);
         $http.post('/item',
         {
           nombre: value
@@ -66,8 +73,8 @@ app.controller('ngAppControllerSearch',
     };
     
     /**************************************************************************
-     * 
      * FUNCION PRIVADA
+     * 
      * AQUI CONTAMOS EL NUMERO DE DATOS RECIBIDOS Y MOSTRAMOS EL MENSAJE CON EL
      * NUMERO, SI ES 0 MOSTRAMOS EL MENSAJE CON EL NUMERO Y EL ESTILO NOTFOUND
      * 

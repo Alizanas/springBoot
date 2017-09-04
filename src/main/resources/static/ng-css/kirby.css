@@ -35,7 +35,7 @@
     width: 186px;
     height: 186px;
     border-radius: 100%;
-    transition: all 750ms ease-in-out
+    transition: all 750ms ease-in-out;
 }
 #cuerpo:hover
 {

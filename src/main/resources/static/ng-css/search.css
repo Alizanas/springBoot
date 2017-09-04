@@ -10,7 +10,8 @@
   justify-content: center;
   align-content: center;
   align-items: center;
-  padding-top: 50px; 
+  padding-top: 50px;
+  background-image: url('../ng-img/coffe_beans.jpg');
 }
 /*Input buscador*/
 #buscador{

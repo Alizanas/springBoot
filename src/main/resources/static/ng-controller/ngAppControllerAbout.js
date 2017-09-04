@@ -1,53 +1,37 @@
-app.controller('ngAppControllerTestBbdd',
+app.controller('ngAppControllerAbout',
 ['$scope', '$http', '$timeout', 'utilFactory',
   function ($scope, $http, $timeout, utilFactory)
   {
-      
     /**************************************************************************
+     * 
      * CONFIG
+     * 
      **************************************************************************/
 
 
 
-
     /**************************************************************************
+     * 
      * INI
+     * 
      **************************************************************************/
-    
-    $scope.testOk = false;
-    
+
+    $scope.countTest = utilFactory.getContTestBBDD();
+    $scope.countItems = utilFactory.getContSearchItems();
+
     /**************************************************************************
+     * 
      * FUNCTIONS MODEL
+     * 
      **************************************************************************/
 
-    $scope.test = function ()
-    {
-      utilFactory.setContTestBBDD(utilFactory.getContTestBBDD() + 1);
-      
-      $http.post('/test',
-      {
-        table: 'propiedad del objeto'
-      })
-      .then(function (response)
-      {
-        scopeTest(response.data);        
-      });
-    };
-    
+
+
     /**************************************************************************
+     * 
      * PRIVATE FUNCTIONS
+     * 
      **************************************************************************/
-
-     function scopeTest(data)
-     {
-        $scope.testOk = true;
-        $scope.alex = data;
-        
-        $timeout(function ()
-        {
-          $scope.testOk = false;
-        }, 5000);
-     }
-
 
   }]);
+

@@ -19,7 +19,8 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider,
     })
     .when('/about',
     {
-      templateUrl: GBL_COFG.urlTemplate('about.html')
+      templateUrl: GBL_COFG.urlTemplate('about.html'),
+      controller: 'ngAppControllerAbout'
     })
     .when('/search',
     {
@@ -35,36 +36,6 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider,
     {
       templateUrl: GBL_COFG.urlTemplate('kirby.html')
     });
-  }]);
-
-app.directive('apploading', ['$http', function ($http)
-  {
-    var loading =
-    {
-      restrict: 'A',
-      link: function (scope, elm, attrs)
-      {
-        scope.isLoading = function ()
-        {
-          return $http.pendingRequests.length > 0;
-        };
-
-        scope.$watch(scope.isLoading, function (v)
-        {
-          //console.log(JSON.stringify(elm) + ' ' + JSON.stringify(attrs))
-          if (v)
-          {
-            elm[0].classList.add('appLoading');
-          }
-          else
-          {
-            elm[0].classList.remove('appLoading');
-          }
-        });
-      }
-    };
-
-    return loading;
   }]);
 
 

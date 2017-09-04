@@ -4,6 +4,8 @@
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
+  
+  /*Con esto centramos la capa*/
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -40,5 +42,15 @@
 
 #about > div ul li
 {
+  float: left;
+  clear: both;
+  width: 100%;
   padding: 5px;
+}
+
+#about > div ul li.separateSection
+{
+  margin-top: 10px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(50, 50, 50, 0.5);
 }

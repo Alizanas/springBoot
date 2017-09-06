@@ -51,16 +51,16 @@ app.controller('ngAppControllerSearch',
     * EN LA BASE DE DATOS
     **************************************************************************/
 
-    
+    //Aquí antes había $http.post(/item),
     $scope.searchFn = function (e)
     {
       var value = e.target.value;
-
+      
       $timeout.cancel(timer.search.id);
       timer.search.id = $timeout(function ()
       {
         utilFactory.setContSearchItems(utilFactory.getContSearchItems() + 1);
-        $http.post('/item',
+        $http.post(isNumeric(value),
         {
           nombre: value
         })
@@ -79,6 +79,14 @@ app.controller('ngAppControllerSearch',
      * NUMERO, SI ES 0 MOSTRAMOS EL MENSAJE CON EL NUMERO Y EL ESTILO NOTFOUND
      * 
      **************************************************************************/
+    
+    function isNumeric(data)
+    {
+        if (data === '')
+            return '/allItem';
+        else
+            return isNaN(data)? '/searchCadena' : '/searchPeso';
+    }
     
     function scopeItems(data)
     {

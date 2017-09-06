@@ -7,7 +7,9 @@ import java.util.List;
 public interface ItemService
 {
 
-  public List<ItemModel> ItemService(ItemModel obj) throws Exception;
+  public List<ItemModel> searchCadenaItemService(ItemModel obj) throws Exception;
+  
+  public List<ItemModel> searchPesoItemService(ItemModel obj) throws Exception;
 
   public List<ItemModel> allItemService(ItemModel obj) throws Exception;
 }

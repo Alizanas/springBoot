@@ -219,6 +219,10 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+#search #items article > * > div h1 span.resaltado
+{
+  color: red;
+}
 
 #search #items article > * > div p
 {
@@ -227,6 +231,11 @@
   overflow: hidden;
   max-height: 70px;
   overflow: auto;
+}
+
+#search #items article > * > div p span.resaltado
+{
+    color: red;
 }
 
 #search #items article > * > div p:first-letter

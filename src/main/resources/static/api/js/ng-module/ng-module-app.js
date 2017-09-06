@@ -1,6 +1,6 @@
 //hacemos referencia al nombre app que le hemos puesto
 //Generamos un modulo y le pasamos un parámetro ngRoute que hace referencia a las direcciones
-var app = angular.module('app', ['ngRoute']);
+var app = angular.module('app', ['ngRoute', 'ngSanitize']);
 
 //Configuracion de como va a funcionar mi pagina segun el enlace
 app.config(['$routeProvider', '$locationProvider', function ($routeProvider,

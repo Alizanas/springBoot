@@ -19,15 +19,24 @@ public class Item
 
   @Autowired
   ItemService iService;
-
-
+  
   @ResponseBody
-  @RequestMapping(value = "/item",
+  @RequestMapping(value = "/searchCadena",
                   method = RequestMethod.POST,
                   produces = MediaType.APPLICATION_JSON_VALUE)
-  public List<ItemModel> item(@RequestBody ItemModel obj) throws Exception
+  public List<ItemModel> searchCadena(@RequestBody ItemModel obj) throws Exception
   {
-      List<ItemModel> x = iService.ItemService(obj);
+      List<ItemModel> x = iService.searchCadenaItemService(obj);
+    return x;
+  }
+  
+  @ResponseBody
+  @RequestMapping(value = "/searchPeso",
+                  method = RequestMethod.POST,
+                  produces = MediaType.APPLICATION_JSON_VALUE)
+  public List<ItemModel> searchPeso(@RequestBody ItemModel obj) throws Exception
+  {
+      List<ItemModel> x = iService.searchPesoItemService(obj);
     return x;
   }
   

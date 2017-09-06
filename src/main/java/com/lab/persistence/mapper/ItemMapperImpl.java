@@ -33,7 +33,20 @@ public class ItemMapperImpl implements ItemMapper
   @Override
   public List<ItemModel> ItemMapper(ItemModel obj) throws Exception
   {
-      return this.addItemModel("SELECT * FROM items WHERE (nombre like '%" + obj.getNombre() + "%')");
+      return this.addItemModel("SELECT * FROM items "
+              + "WHERE (nombre like '%" + obj.getNombre() + "%')"
+                      + "OR (descripcion like '%" + obj.getNombre() + "%')");
+  }
+  
+  @Override
+  public List<ItemModel> pesoItemMapper(ItemModel obj) throws Exception
+  {
+      return this.addItemModel("SELECT * FROM items "
+              + "WHERE id "
+              + "IN (SELECT iditem "
+              + "FROM pesoitems "
+              + "WHERE peso =" + obj.getNombre() + ")");
+      
   }
   
   @Override

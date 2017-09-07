@@ -42,6 +42,27 @@ app.controller('ngAppControllerSearch',
       });
     })();
     
+    (function ()
+    {
+    var obj =
+    [   
+        {
+            nombre: 'Alejandro'
+        },
+        {
+           apellidos: 'Lizana'
+        }
+    ];
+    for (var key in obj) 
+    {
+        console.log(key);   
+        for (var key2 in obj[key]) 
+        {    
+            console.log(key2);
+        }   
+    }
+    })();
+    
 
     /**************************************************************************
     * 

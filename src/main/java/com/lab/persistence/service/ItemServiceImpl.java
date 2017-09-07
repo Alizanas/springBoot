@@ -46,7 +46,7 @@ public class ItemServiceImpl implements ItemService
       for (ItemModel item : x)
       {
           item.setNombre(this.pattern(obj.getNombre()).matcher(item.getNombre()).replaceAll(this.patternReplace(obj.getNombre())));
-          item.setDescripcion(this.pattern(obj.getDescripcion()).matcher(item.getDescripcion()).replaceAll(this.patternReplace(obj.getDescripcion())));
+          item.setDescripcion(this.pattern(obj.getNombre()).matcher(item.getDescripcion()).replaceAll(this.patternReplace(obj.getNombre())));
       }
 //        for (int i =0; i< x.size(); i++)
 //        {

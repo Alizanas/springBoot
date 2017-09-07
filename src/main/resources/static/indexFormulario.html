@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div id="contenedor">
+            <form>
+              <input type="text" value="hola" name="nombre"/>
+              <input type="text" value="adios" name="descripcion"/>
+              <input type="checkbox"  name="check" checked/>
+            </form>
+            <form>
+              <input type="text" value="vete" name="nombre"/>
+              <input type="text" value="cariño" name="descripcion"/>
+              <input type="checkbox"  name="check" checked/>
+            </form>
+    </div>
+    <script>
+      (function ()
+      {
+
+
+        var responseData =
+        [{},{}];
+
+
+        dameloTo(function (x)
+        {
+          console.log(x)
+          var cont = document.querySelector('#contenedor');
+          cont.innerHTML += getInput(x.clave, x.valor);
+        }, responseData);
+
+
+
+
+
+
+        var obj = {};
+
+        function dameloTo(fn, responseData)
+        {
+          for (var a in responseData)
+          {
+            obj = getProperties(responseData[a]);
+
+            for (var o in obj)
+            {
+//              fn(arr[a][obj[o]])
+
+              fn({
+                clave: obj[o],
+                valor: responseData[a][obj[o]]
+              })
+            }
+          }
+        }
+
+
+
+//        for (var i = 0, maxi = arr.length; i < maxi; i++)
+//        {
+//          obj = getProperties(arr[i]);
+//
+//          for (var j = 0, maxj = obj.length; j < maxj; j++)
+//          {
+//            console.log(arr[i][obj]);
+//          }
+//
+//        }
+
+
+
+
+
+
+
+        function getInput(name, value)
+        {
+          return '<input type="text" name="' + name + '" value="' + value + '"/>';
+        }
+
+
+        function getProperties(obj)
+        {
+          var properties = [];
+
+          for (var x in obj)
+          {
+            properties.push(x);
+          }
+
+          return properties;
+        }
+
+
+
+
+
+
+
+
+//        var forms = document.forms, send = [];
+//        
+//        for (var i = 0, max = forms.length; i < max; i++)
+//        {
+//          if (forms[i].check.checked)
+//          {
+//            send.push({
+//              nombre: forms[i].nombre.value,
+//              descripcion: forms[i].descripcion.value
+//            });
+//          }
+//        }
+//        for (var i in send)
+//        {
+//          console.log(send[i].nombre);  console.log(send[i].descripcion);
+//        }
+
+      })();
+    </script>
+
+  </body>
+</html>
